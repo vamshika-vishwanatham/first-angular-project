@@ -1,0 +1,115 @@
+<div class="newsfeed" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+  <div class="profile-info">
+    <div class="row">
+      <div class="col-sm-1 ">
+        <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle" width="40"
+             height="40">
+        <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle" width="40"
+             height="40">
+      </div>
+      <div class="col-sm-11 mt-2">
+        <span class="post "><b>What's on your mind {{userInfo?.firstName}}?</b></span>
+      </div>
+    </div>
+    <hr>
+    <div class="row mb-2">
+      <div class=" ml-5">
+        <img src="assets/img/livevideo.png" width="23px" height="20px">
+        <span class="post-activities">Live video</span>
+      </div>
+      <div class="ml-4">
+        <img src="assets/img/picimg.png" width="23px" height="20px">
+        <span class="post-activities">Photos/Videos</span>
+      </div>
+      <div class="ml-4">
+        <img src="assets/img/smilyimg.png" width="23px" height="20px">
+        <span class="post-activities">Feeling/Activity</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="profile-info">
+    <!--   <img src="assets/img/roomvideo.jpg" class="rounded-circle" width="60px" height="60px">-->
+    <div>
+      <i class="fa fa-video-camera ml-3" style="font-size: 20px; color: #6c6cf3"></i>
+      <span class="ml-2" style="font-weight: 600">Rooms</span>
+      <span style="color: #6c6cf3;margin-right: 20px; float: right">Create</span>
+    </div>
+    <div class="ml-3 mt-2">
+      <img src="assets/img/vamshi.jpg" class="rounded-circle" width="40px" height="40px">
+      <img src="assets/img/vam.jpg" class="rounded-circle ml-3" width="40px" height="40px">
+      <img src="assets/img/vamshi.jpg" class="rounded-circle ml-3" width="40px" height="40px">
+      <img src="assets/img/vam.jpg" class="rounded-circle ml-3" width="40px" height="40px">
+      <img src="assets/img/vamshi.jpg" class="rounded-circle ml-3" width="40px" height="40px">
+    </div>
+  </div>
+  <br>
+
+  <div *ngFor="let newsFeed of newsFeedInfo">
+    <div class="profile-info">
+      <div class="row" style="height: 45px">
+        <div class="col-sm-1">
+          <img *ngIf="newsFeed?.friendsProfilePic" src="{{newsFeed?.friendsProfilePic}}" class="rounded-circle"
+               width="40px"
+               height="40px">
+          <img *ngIf="!newsFeed?.friendsProfilePic" src="assets/profilepics/IMG_20200720_124032.jpg"
+               class="rounded-circle" width="40px" height="40px">
+        </div>
+        <div class="col-sm-9">
+          <div class="ml-2 row">
+            <span class=""
+                  style="font-size: 14px;font-family: Arial"><b>{{newsFeed?.friendsProfileName}}</b>  {{newsFeed?.context}}</span>
+          </div>
+          <div class="row ml-2 mb-0">
+            <p style="font-size: 13px">{{newsFeed?.time}}</p>
+          </div>
+        </div>
+        <div class="col-sm-2 mt-2 pl-5">
+          <i class="fa fa-ellipsis-h" style="font-size:20px"></i>
+        </div>
+      </div>
+      <div class="changed-photo">
+        <img *ngIf="newsFeed?.photo" src="{{newsFeed?.photo}}" width="490px" height="400px">
+      </div>
+      <div class="liked-by row">
+        <span class="col"><img src="assets/img/like%20img.jpg" class="rounded-circle" width="25px"
+                               height="25px"> {{newsFeed?.likedBy}} </span>
+        <span class="col comments-col"><span>2 comments</span><span>   2 shared</span></span>
+      </div>
+      <hr *ngIf="newsFeed.isSeparator" >
+      <div class="row" style="margin-top: -9px">
+        <span class="col ml-5"><img src="assets/icons/like_PNG73.png" width="20px" height="20px"> like</span>
+        <span class="col ml-2"><img src="assets/icons/comments-png.png" width="20px" height="20px"> comment</span>
+        <span class="col ml-5"><img src="assets/icons/share.png" width="20px" height="20px"> share</span>
+      </div>
+      <hr *ngIf="newsFeed.isSeparator">
+      <div class="row" style="margin-top: -9px">
+        <div class="col-sm-1">
+          <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle" width="35"
+               height="35">
+          <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle" width="35"
+               height="35">
+        </div>
+        <div class="col-sm-11">
+          <div class=" row comment-box ml-1">
+            <div class="col-sm-5   p-0 ">
+              <input type="text" style="border: 0px; margin-left: 15px; background-color: #ebecee" placeholder="Write a comment....">
+            </div>
+
+            <div class=" col-sm-7">
+              <div class="float-right">
+                <i class="fa fa-smile-o pl-3" style="font-size:20px"></i>
+                <i class="fa fa-camera pl-3" style="font-size:20px"></i>
+                <i class="fa fa-smile-o pl-3" style="font-size:20px"></i>
+                <i class="fa fa-smile-o pl-3" style="font-size:20px"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+
+</div>

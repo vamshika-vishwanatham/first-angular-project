@@ -1,0 +1,181 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "src/app/generic-drop-down/generic-drop-down.component.css";*/
+.fontSize_18px{
+  fontSize: 18px;
+}
+.fontSize_22px{
+  font-size: 22px!important;
+  /*margin-top: 5px!important;*/
+}
+.fontSize_13px{
+  font-size: 13px!important;
+}
+.fontSize_24px{
+  font-size: 24px !important;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.fontSize_20px{
+  font-size: 20px;
+}
+
+/*create styles*/
+.create-row-alignment{
+  padding-left: 34px!important;
+}
+.create-dropdown{
+  margin-top: 18px!important;
+  margin-left: -200px!important;
+}
+/*create styles end*/
+
+/*messenger styles*/
+.message-row-alignment{
+  padding-left: 50px!important;
+  margin-top: 4px!important;
+}
+.messenger-icon-dropdown-styles{
+  margin-top: 18px!important;
+  margin-left: -235px!important;
+}
+.search-bar-input{
+  border: 0px;
+  background-color: #ebecee;
+}
+.search-bar-style{
+  border-radius: 25px;
+  padding: 10px 110px 10px 10px;
+  background-color: #ebecee;
+}
+/*messenger styles end*/
+
+/*messenger-template*/
+
+
+
+/*messenger-template end*/
+/*notification styles*/
+.notifications-row-alignment{
+  padding-left: 50px!important;
+}
+.notifications-buttons-styles{
+  padding-left: 16px!important;
+  margin-top: 8px!important;
+}
+.notifications-mutual-friends-styles{
+  color: #65676b;
+  font-weight: normal;
+  font-size: 13px;
+}
+.notifications-icon-dropdown-styles{
+  margin-top: 18px!important;
+  margin-left: -285px!important;
+}
+.delete-btn{
+  background-color: #c1c5ca!important;
+  padding-right: 20px!important;
+  padding-left: 20px!important;
+  color: black!important;
+}
+/*notification styles end*/
+
+/*account styles*/
+.account-row-alignment{
+  padding-left: 37px!important;
+}
+.account-icon-dropdown-styles{
+  margin-top: 18px!important;
+  margin-left: -335px!important;
+}
+.user-name-styles{
+  color: #050505;
+  font-weight: 400!important;
+  font-size: 1.0625rem;
+  font-family: inherit;
+}
+/*account styles end*/
+
+/*all dropdown items styles*/
+.label-styles{
+  font-weight: 500;
+  font-size: .9375rem;
+  color: #48494c;
+  font-family: inherit;
+}
+.context-styles{
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8186;
+  font-family: inherit;
+}
+.time-styles {
+  font-size: .8125rem;
+  font-weight: normal;
+  color: #6c6cf3;
+}
+.sub-header-label-styles{
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #050505;
+}
+.dropdown-items-hover {
+  margin-left: -6px!important;
+  margin-right: -4px!important;
+}
+.dropdown-items-hover:hover{
+  background-color: #dddcdc;
+  border-radius: 10px;
+}
+.dropDownItemsIconsBackgroundStyles {
+  border-radius: 50%;
+  padding: 9px 9px;
+  background-color: #ebecee;
+}
+.dropdown-menu{
+  width: 380px;
+  min-height: auto;
+  max-height: 560px;
+  padding-left: 10px!important;
+  padding-right: 18px!important;
+  overflow: hidden;
+}
+.dropdown-menu:hover{
+  overflow-y: auto;
+}
+/*all dropdown items styles*/
+
+/*dropdown icon styles*/
+.dropdown-icon-hover:hover{
+  background-color: #cdcaca;
+  border-radius: 50%;
+}
+.active-icon:visited{
+  color: #6c6cf3;
+  background-color: lightblue;
+}
+.icon-background-style {
+  border-radius: 50%;
+  padding: 10px 13px;
+  background-color: #ebecee;
+}
+/*dropdown icon styles end*/
+.col{
+  padding-right: 0px!important;
+}
+
+/*html, body { height: 100%; }*/
+/*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/
+
+.h4, h4 {
+  font-size: 1.5rem!important;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem!important;
+  font-weight: 500!important;
+  line-height: 1.2!important;
+}
+.h6, h6 {
+  font-size: 1rem!important;
+}

@@ -1,0 +1,52 @@
+<div *ngIf="!isValid" class="alert alert-danger" role="alert">
+  Invalid Login Details.
+</div>
+<div class="row">
+  <div class="container-fluid login-container">
+    <div class="row">
+      <div class="col">
+        <h1 class="facebook-logo">facebook</h1>
+      </div>
+      <div class="col">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="row ">
+            <div class="col mt-2">
+              <div class="text-white ">Email or Phone</div>
+              <input type="email" formControlName="email" class="int form-control ">
+              <div
+                *ngIf="(loginForm.get('email').invalid && (loginForm.get('email').touched) || loginForm.get('email').dirty)"
+                class="text-danger">
+                <small class="text-danger" *ngIf="loginForm.get('email').errors?.required">Email is required</small>
+                <small class="text-danger" *ngIf="loginForm.get('email').errors?.email">Email is invalid</small>
+              </div>
+            </div>
+            <div class="col mt-2">
+              <div class="text-white ">Password</div>
+              <input type="password" formControlName="password" class="int form-control">
+              <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" class="text-danger">
+                <small class="text-danger" *ngIf="loginForm.get('password').errors?.required">Password is
+                  required</small>
+              </div>
+              <a>Forgotten account?</a>
+            </div>
+            <div class="col">
+              <button [disabled]="!loginForm.valid" type="submit" class="btn btn-sm btn-primary login-btn">Login
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid row mt-1">
+    <div class="col block">
+      <div class="block">Facebook helps you connect and share with the people in your life.</div>
+      <img class="con_3_b" src="https://www.facebook.com/rsrc.php/v3/yi/r/OBaVg52wtTZ.png" alt="facebook" width="537"
+           height="195">
+    </div>
+    <div class="col block1">
+      <app-create-account></app-create-account>
+    </div>
+  </div>
+</div>

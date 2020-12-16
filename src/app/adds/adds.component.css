@@ -1,0 +1,39 @@
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.title{
+  font-weight: 500;
+  color: gray;
+}
+.advertise-text{
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.img1{
+  border-radius: 15%;
+}
+.friends-list{
+  color: #6c6cf3;
+  margin-left: 120px;
+}
+.friend-name{
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 2px;
+}
+.delete-btn{
+  background-color: #c1c5ca;
+  padding-right: 20px;
+  padding-left: 20px;
+  color: black;
+}
+.right-index{
+  position: fixed;
+  width: 300px;
+  height: 565px;
+}

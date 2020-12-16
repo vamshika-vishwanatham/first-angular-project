@@ -1,0 +1,34 @@
+.a {
+  height: 450px;
+}
+.gender{
+
+  height: 35px;
+  /*margin: 0;*/
+  position: absolute;
+  right: 80px;
+  /*top: 0;*/
+}
+.gender-label{
+  box-sizing: border-box;
+  border: 1px solid #c1c5ca;
+  border-radius: 3px;
+  color: #484a4e;
+  display: inline-block;
+  /*font-family: SFProText-Medium, Helvetica, Arial, sans-serif;*/
+  font-size: 15px;
+  line-height: 36px;
+  padding: 0 28px 0 10px;
+  width: 75%;
+}
+.para{
+  font-size: 13px;
+  font-weight: normal;
+}
+.signup-btn{
+  width: 250px;
+  font-weight: bold;
+  font-size: 25px;
+  margin-left: 175px;
+  height: 44px;
+}

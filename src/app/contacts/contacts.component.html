@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col p-0">
+    <h6 class="title">Contacts</h6>
+  </div>
+  <div class="col contacts-icon">
+    <i class="fa fa-video-camera pr-3" aria-hidden="true"></i>
+    <i class="fa fa-search pr-3" aria-hidden="true"></i>
+    <i class="fa fa-ellipsis-h pr-3" aria-hidden="true"></i>
+  </div>
+</div>
+<!--<div *ngFor="let name of contactName ">-->
+<div class="row mt-2" *ngFor="let contact of contactName">
+  <div class="col-sm-1 p-0" >
+    <img *ngIf="contact.photoUrl" src="{{contact.photoUrl}}" class="" width="20px" height="20px">
+    <img *ngIf="!contact.photoUrl" src="assets/img/giftbox.jpg" width="20px" height="20px">
+  </div>
+  <div class="col-sm-11 mt-1 float-left">
+    <b>{{contact.name}}</b>
+  </div>
+</div>
+<!--</div>-->
+<div>
+
+</div>

@@ -1,0 +1,20 @@
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.leftIndex a {
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.leftIndex-items-hover:hover{
+  background-color: #dddcdc;
+  border-radius: 10px;
+
+}
+.leftIndex{
+  position: fixed;
+  width: 280px;
+  height: 565px;
+}

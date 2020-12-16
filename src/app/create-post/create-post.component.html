@@ -1,0 +1,67 @@
+<div class="p-0">
+  <div class="row ">
+    <div class="col-sm-10">
+      <h2 style="font-weight: 500!important;margin-left: 160px">Create Post</h2>
+    </div>
+    <div class="col-sm-2 p-0">
+    <span style="background-color:#e4e6eb;  padding: 12px 10px 6px 10px;; border-radius: 50%">
+      <span style="font-size: 30px; color: #827d7d;" class="mt-1">x</span>
+    </span>
+    </div>
+  </div>
+  <hr class="p-0">
+  <div mat-dialog-content>
+    <div class="row">
+      <div class="col-sm-2">
+        <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle float-right"
+             width="50"
+             height="50">
+        <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle float-right " width="50"
+             height="50">
+      </div>
+      <div class="col-sm-10 mt-1">
+        <div class="row">
+          <span>{{userInfo?.firstName}} {{userInfo.surName}}</span>
+        </div>
+        <div class="row">
+          <div style="padding: 2px 12px;background-color: #e4e6eb;border-radius: 5px">
+            <i class="fa fa-group"></i>
+            <span class="ml-1" style="font-weight: 500!important;">Friends</span>
+            <i class="fa fa-sort-down ml-1 mb-1"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form [formGroup]="postForm" >
+      <div class="mt-3 p-0 form-group">
+      <textarea formControlName="postText" class="post-input" rows="5"
+                cols="60" value=""
+                placeholder="Whats on your mind,{{userInfo.firstName}}?"></textarea>
+      </div>
+    </form>
+    <div class="row">
+      <div class="col pl-0">
+        <img src="assets/icons/SATP_Aa_square-2x.png" class="ml-2" width="40" height="40">
+      </div>
+      <div class="col">
+        <i class="fa fa-smile-o float-right mt-1 mr-3" style="font-size: 30px"></i>
+      </div>
+    </div>
+    <div class="add-post mt-1 row">
+      <div class="col" style="margin-top: 20px!important;margin-left: 10px">
+        <span style="font-size: 18px">Add to your post</span>
+      </div>
+      <div class="p-0 mt-1 col float-left">
+        <img src="assets/img/bluevideo.png" width="50" height="50">
+        <img src="assets/icons/imagesicon.png" class="ml-1" height="30" width="30">
+        <img src="assets/icons/usertag.png" class="ml-1" width="30" height="30">
+        <img src="assets/img/smilyimg.png" class="ml-1" width="30" height="30">
+        <img src="assets/icons/location.png" class="ml-1" width="30" height="30">
+        <i class="fa fa-ellipsis-h mt-2 ml-1" style="font-size: 20px"></i>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions class="btn-group mt-1">
+    <button mat-button [disabled]="!postForm.valid" type="button" (click)="submitPost()" class="btn btn-primary">Post</button>
+  </div>
+</div>

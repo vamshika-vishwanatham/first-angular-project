@@ -1,0 +1,142 @@
+<div class=" row" style="height: 60px">
+  <nav class="fixed-top navbar navbar-expand-md">
+    <div class="topNav row">
+      <!--facebook & search bar-->
+      <div class="col-sm-3 ">
+        <div class="row">
+          <div class="col-sm-2 p-0 facebook">
+            <img src="assets/img/fb.jpg" class="rounded-circle mt-2" width="42px" height="42px">
+          </div>
+          <div class="col-sm-10 mt-3 pl-0 search">
+        <span class="search-bar ">
+      <i class="fa fa-fw fa-search"></i>
+        <input type="text" class="search-bar-input" placeholder="search facebook">
+      </span>
+          </div>
+        </div>
+      </div>
+      <!--facebook & search bar-->
+      <!--    newsfeed icons-->
+      <div class="col-sm-5 ">
+        <div class="row mt-3">
+          <div class="col">
+            <img src="assets/img/homeimg.webp" tooltip="Home" placement="bottom" [offset]="17"
+                 class="newsfeed float-right" width="28px" height="28px">
+          </div>
+          <div class="col">
+            <img src="assets/img/videotvimg.png" tooltip="Watch" placement="bottom" [offset]="17"
+                 class="newsfeed float-right" width="28px" height="28px">
+          </div>
+          <div class="col">
+            <img src="assets/icons/groupicon.png" tooltip="Groups" placement="bottom" [offset]="17"
+                 class="newsfeed float-right" width="28px" height="28px">
+          </div>
+          <div class="col">
+            <img src="assets/icons/gamingicon.png" tooltip="Gaming" placement="bottom" [offset]="17"
+                 class="newsfeed float-right" width="28px" height="28px">
+          </div>
+        </div>
+      </div>
+      <!--    newsfeed icons-->
+      <!--    profile & icons-->
+      <div class="col-sm-2 profile">
+        <div class="row" style="margin-left: 130px">
+          <div class="col-sm-1 mt-3 pl-0 pr-0">
+            <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle float-right"
+                 width="30"
+                 height="30">
+            <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle float-right " width="30"
+                 height="30">
+          </div>
+          <div class="col-sm-1 mt-4 pl-0 pr-0">
+            <span style="margin-left: 7px;font-weight:450;font-size: 17px">{{userInfo?.firstName}}</span>
+          </div>
+        </div>
+      </div>
+      <!--    profile & icons-->
+      <div class="col-sm-2 mt-3">
+        <app-generic-drop-down [dropDownProperties]="createDropDownProperties"
+                               [dropDownItems]="createDropDownItems"
+                               (clickEv)="dropDownItemsClick($event)">
+        </app-generic-drop-down>
+        <app-generic-drop-down [dropDownProperties]="messengerDropDownProperties"
+                               [dropDownItems]="messengerDropDownItems">
+        </app-generic-drop-down>
+        <app-generic-drop-down [dropDownProperties]="notificationDropDownProperties"
+                               [dropDownItems]="prepareNotificationsDropDownItems()">
+        </app-generic-drop-down>
+        <app-generic-drop-down [dropDownProperties]="accountDropDownProperties"
+                               [dropDownItems]="prepareAccountDropDownItemsLabelTemplate()">
+        </app-generic-drop-down>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="body">
+  <router-outlet></router-outlet>
+</div>
+<ng-template #messengerTemplate>
+  <div class="mt-1 row p-0" style="margin-left: 60px!important;">
+    <div class="col p-0 mr-2 templateIconsBackgroundStyles">
+      <img src="assets/dropdownimages/enlarge-icon.jpg" width="15" height="15">
+    </div>
+    <div class="col p-0 mr-2 templateIconsBackgroundStyles">
+      <i class="fa fa-video-camera " style="font-size:20px"></i>
+    </div>
+    <div class="col p-0 mr-2 templateIconsBackgroundStyles">
+      <i class="fa fa-pencil-square-o " style="font-size:20px"></i>
+    </div>
+    <div class="col p-0 mr-2 templateIconsBackgroundStyles">
+      <i class="fa fa-ellipsis-h " style="font-size:20px"></i>
+    </div>
+    <!-- <div class="col p-0 templateIconsBackgroundStyles"> -->
+      <!-- <app-generic-drop-down [dropDownProperties]="messengerTemplateDropdownProperties"
+                             [dropDownItems]="messengerTemplateDropdownItems">
+      </app-generic-drop-down> -->
+    <!-- </div> -->
+  </div>
+</ng-template>
+
+<!-- <ng-template #messengerTemplateDropdown> -->
+  <!-- <h3>Chat Settings</h3> -->
+  <!-- <h5>Customise your messenger experience</h5> -->
+<!-- </ng-template> -->
+
+<ng-template #notificationTemplate >
+      <span class="templateIconsBackgroundStyles" style="margin-left: 160px!important;">
+        <i  class="fa fa-ellipsis-h mt-2"></i>
+      </span>
+<!--      <div class="dropdown-item">Mark all as read</div>-->
+<!--      <div class="dropdown-item">Notifications settings</div>-->
+<!--      <div class="dropdown-item"> Open notifications</div>-->
+  <!--    <app-generic-drop-down [dropDownProperties]="notificationHeaderDropdownProperties"-->
+  <!--                           [dropDownItems]="notificationHeaderDropdownItems">-->
+  <!--  </app-generic-drop-down>-->
+</ng-template>
+
+<ng-template #accountTemplate>
+  <div class="row account-template ml-3 pb-2 pl-2 pr-5">
+    <div class="col-sm-2 mt-2 pr-3 pl-0">
+      <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle " width="60"
+           height="60">
+      <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle  " width="60"
+           height="60">
+    </div>
+    <div class="col-sm-10 mt-3 pl-4">
+      <div class="user-name-styles">{{userInfo?.firstName}} {{userInfo.surName}}</div>
+      <div style="font-size: 15px; color: #65676b">See your Profile</div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #notificationSubHeaderTemplate>
+  <a style="padding-left: 150px; color: #6c6cf3">See All</a>
+</ng-template>
+<ng-template #accountBottomTemplate>
+  <a style="font-size: 13px">privacy.Terms.Advertising.Ad choices.cookies.more.facebook.2020</a>
+</ng-template>
+<ng-template #accountLabelTemplate>
+  <i class="fa fa-angle-right" style="padding-left: 10px; margin-top: -10px; font-size: 47px;"></i>
+</ng-template>
+<ng-template #accountDarkMoodTemplate>
+  <i class="fa fa-toggle-off" style="padding-left: 134px;font-size: 30px;"></i>
+</ng-template>

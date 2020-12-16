@@ -1,0 +1,63 @@
+.login-container{
+  background-color: #385898;
+  width: 1372px;
+  height: 100px;
+}
+.facebook-logo{
+  margin-left: 96px;
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+  font-family: inherit;
+}
+.dropdown-items-hover{
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 10px;
+}
+.block1{
+  padding-top: 13px;
+}
+.pwd{
+  margin-right: 139px;
+}
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+/*.lb_2{*/
+/*  margin-top: 10px ;*/
+/*  margin-bottom: 0px;*/
+/*  font-size: 14px;*/
+/*}*/
+textarea:focus, input:focus{
+  outline: none;
+
+}
+.int{
+  height: 23px;
+}
+/*.bt{*/
+/*  background-color: royalblue;*/
+/*  width: 45px;*/
+/*  height: 23px;*/
+/*  margin-top: 33px;*/
+/*  margin-left: 18px;*/
+/*  text-align: center;*/
+/*}*/
+.login-btn{
+  background-color: royalblue;
+  margin-top: 29px !important;
+  border: 1px;
+
+}
+.login-btn:hover{
+  background-color: #385898;
+
+}
+.block{
+  padding-top: 12px;
+  font-size: 25px;
+  color: #797777;
+  font-weight: 500;
+}

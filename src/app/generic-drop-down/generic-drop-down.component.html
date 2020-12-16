@@ -1,0 +1,109 @@
+<span [class]="'dropdown '+dropDownProperties?.dropDownClasses">
+  <a type="button" data-toggle="dropdown" [tooltip]="dropDownProperties?.toolTipName" placement="bottom" [offset]="17">
+    <!--    to display dropdown icon-->
+    <span [class]="dropDownProperties?.dropDownIcon?.dropDownIconBackgroundClass + ' dropdown-icon-hover active_icon'">
+      <i *ngIf="dropDownProperties?. dropDownIcon?.iconsClasses"
+         [class]="dropDownProperties?.dropDownIcon?.iconsClasses"></i>
+    <img *ngIf="dropDownProperties?.dropDownIcon?.iconImage?.img_path"
+         [src]="dropDownProperties?.dropDownIcon?.iconImage?.img_path"
+         [class]="dropDownProperties?.dropDownIcon?.iconImage?.img_class"
+         [width]="dropDownProperties?.dropDownIcon?.iconImage?.img_width"
+         [height]="dropDownProperties?.dropDownIcon?.iconImage?.img_height">
+    </span>
+  </a>
+
+  <div [class]="'dropdown-menu lookup_menu '+ dropDownProperties?.dropDownMenuClasses "
+       style="border-radius: 10px!important;">
+    <div class="row">
+        <div><h4 *ngIf="dropDownProperties?.header?.label"
+            class="font-weight-bold pl-4 mt-1">{{dropDownProperties?.header?.label}}</h4></div>
+      <div><ng-container [ngTemplateOutlet]="dropDownProperties?.header?.template">
+        <!-- <div *ngIf="dropDownProperties?.submenu" class="dropdown-submenu"> -->
+<!--          <div class="dropdown-item">Mark all as read</div>-->
+<!--      <div class="dropdown-item">Notifications settings</div>-->
+<!--      <div class="dropdown-item"> Open notifications</div>-->
+        <!-- </div> -->
+      </ng-container></div>
+    </div>
+
+    <div *ngIf="dropDownProperties?.dropDownSearchBar?.isSearchBar" class="pt-2 pb-2 mt-2">
+        <span [class]="dropDownProperties?.dropDownSearchBar?.class">
+          <i class="fa fa-fw fa-search"></i>
+        <input type="text" class="search-bar-input"
+               [placeholder]="dropDownProperties?.dropDownSearchBar?.placeHolder">
+        </span>
+    </div>
+
+    <ng-container *ngFor="let item of dropDownItems">
+      <!--      dropdown items-->
+      <hr *ngIf="item.separator">
+
+      <span *ngIf="item.subHeader?.label"
+            [class]="item.subHeader?.labelClass +' sub-header-label-styles'">{{item.subHeader?.label}}
+        <span><ng-container *ngIf="item.subHeader?.template" [ngTemplateOutlet]="item.subHeader?.template">
+      </ng-container></span></span>
+      <div class="row pb-1 pt-1 dropdown-items-hover mt-1" (click)="click(item.id)">
+        <div class="col-sm-1 mt-2" *ngIf="!item.isIconAfterLabel">
+<!--          <div [ngClass]="{'mt-2': (item.labelInfo?.labelHeader) && (item.labelInfo?.labelContext)}"></div>-->
+          <span [class]="item.dropDownItemIcon?.dropDownIconBackgroundClass">
+            <i *ngIf="item.dropDownItemIcon?.iconsClasses" [class]="item.dropDownItemIcon?.iconsClasses "></i>
+          <img *ngIf="item.dropDownItemIcon?.iconImage?.img_path" [src]="item.dropDownItemIcon?.iconImage?.img_path"
+               [class]="item.dropDownItemIcon?.iconImage?.img_class"
+               [width]="item.dropDownItemIcon?.iconImage?.img_width"
+               [height]="item.dropDownItemIcon?.iconImage?.img_height">
+        </span>
+        </div>
+        <div [class]="dropDownProperties?.labelAlignmentClasses + ' col-sm-10'">
+          <div class="row">
+          <div class="col-sm-10 pr-0 ">
+
+            <div *ngIf="item.labelInfo?.labelHeader"
+                 [class]="item.labelInfo?.labelHeaderClasses + ' label-styles'">
+              <span>{{item.labelInfo?.labelHeader}}</span>
+              <div [ngClass]=""></div>
+              </div>
+            <div *ngIf="item.labelInfo?.labelContext"
+                 [class]="item.labelInfo?.labelContextClasses + ' context-styles'">
+              <span>{{item.labelInfo?.labelContext}}</span>
+            </div>
+            <div *ngIf="item.labelInfo?.labelTime"
+                 [class]="item.labelInfo?.labelTimeClasses +' time-styles'">
+              <span>{{item.labelInfo?.labelTime}} ago</span>
+            </div>
+          <div *ngIf="item.labelInfo?.labelMutualFriends"
+               [class]="'fontSize_13px'">
+            <span>{{item.labelInfo?.labelMutualFriends}} mutual friends</span>
+          </div>
+          <div *ngIf="item.labelInfo?.labelConfirmRequest" [class]="'notifications-buttons-styles' + ' row'">
+            <button type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn delete-btn ml-2 ">Delete</button>
+          </div>
+            </div>
+          <div class="col-sm-2 float-right" *ngIf="item.labelInfo?.labelTemplate">
+            <ng-container
+              [ngTemplateOutlet]="item.labelInfo?.labelTemplate"></ng-container>
+          </div>
+          </div>
+        </div>
+
+      <div class="col-sm-1 mt-2" *ngIf="item.isIconAfterLabel">
+          <span [class]="item.dropDownItemIcon?.dropDownIconBackgroundClass">
+            <i *ngIf="item.dropDownItemIcon?.iconsClasses" [class]="item.dropDownItemIcon?.iconsClasses"></i>
+          <img *ngIf="item.dropDownItemIcon?.iconImage?.img_path" [src]="item.dropDownItemIcon?.iconImage?.img_path"
+               [class]="item.dropDownItemIcon?.iconImage?.img_class"
+               [width]="item.dropDownItemIcon?.iconImage?.img_width"
+               [height]="item.dropDownItemIcon?.iconImage?.img_height">
+        </span>
+        </div>
+      </div>
+<!--        </div>-->
+    </ng-container>
+  <div class="row ml-2 mt-2"> <ng-container *ngIf="dropDownProperties?.bottomTemplate"
+                                            [ngTemplateOutlet]="dropDownProperties?.bottomTemplate">
+      </ng-container></div>
+  </div>
+</span>
+
+
+
+

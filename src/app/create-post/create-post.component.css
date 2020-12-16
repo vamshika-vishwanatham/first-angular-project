@@ -1,0 +1,18 @@
+textarea:focus, input:focus{
+  outline: none;
+  border: none;
+}
+textarea{
+  border: none;
+}
+.add-post{
+  border: 2px solid #e4e6eb;
+  border-radius: 7px;
+  width: 450px;
+  height: 68px;
+  margin-left: 0px;
+}
+hr{
+  margin-top: 5px!important;
+  margin-bottom: 7px!important;
+}

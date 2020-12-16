@@ -1,0 +1,50 @@
+<div class="leftIndex overflow-auto">
+  <div class=" mt-4 mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img *ngIf="userInfo?.profilePic" src="{{userInfo?.profilePic}}" class="rounded-circle" width="25"
+         height="25">
+    <img *ngIf="!userInfo?.profilePic" src="assets/img/vam.jpg" class="rounded-circle" width="25"
+         height="25">
+    <a class="ml-3" style="margin-top: 20px!important;" routerLink="/profile-id"
+       routerLinkActive="active">{{userInfo?.firstName}} {{userInfo?.surName}}</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/friends-icon.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/friends" routerLinkActive="active">Friends</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/msgicon.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/messenger" routerLinkActive="active">Messenger</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/group.png" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/groups" routerLinkActive="active">Groups</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/video.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/videos" routerLinkActive="active">Videos</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/event.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/event" routerLinkActive="active">Events</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/friendlist.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/friends-list" routerLinkActive="active">FriendsList</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/game.png" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/games" routerLinkActive="active">Games</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/job.png" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/jobs" routerLinkActive="active">Jobs</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/weather.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/weather" routerLinkActive="active">Weather</a>
+  </div>
+  <div class=" mt-1 pb-2 pt-2 pl-2 leftIndex-items-hover">
+    <img src="assets/img/memory.jpg" class="rounded-circle" width="25px" height="25px">
+    <a class="ml-3" routerLink="/memories" routerLinkActive="active">Memories</a>
+  </div>
+</div>

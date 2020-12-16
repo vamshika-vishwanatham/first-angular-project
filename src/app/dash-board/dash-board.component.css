@@ -1,0 +1,64 @@
+.navbar {
+  padding: 0px 0px;
+}
+
+.search-bar {
+  border-radius: 25px;
+  padding: 10px 13px;
+  background-color: #ebecee;
+}
+
+.icon {
+  margin-top: -43px;
+  float: right;
+  margin-right: 15px;
+}
+
+.topNav {
+  background-color: white;
+  height: 60px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.body {
+  background-color: #ebecee;
+  height: auto;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.newsfeed:hover {
+  background-color: #dddcdc;
+  border-radius: 10px;
+  /*padding: 20px;*/
+}
+
+.fontSize_18px {
+  fontSize: 18px;
+}
+
+.search-bar-input {
+  border: 0px;
+  background-color: #ebecee;
+}
+.templateIconsBackgroundStyles{
+  border-radius: 50% !important;
+  padding: 6px 6px!important;
+  /*background-color: #2196F3!important;*/
+}
+.templateIconsBackgroundStyles:hover{
+  border-radius: 50% !important;
+  background-color: #ebecee!important;
+}
+.account-template:hover{
+  border-radius: 5% !important;
+  background-color: #ebecee!important;
+}
+.header-template-dropdown{
+  position: absolute;
+}

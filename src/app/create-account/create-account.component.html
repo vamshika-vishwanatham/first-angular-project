@@ -1,0 +1,127 @@
+<div *ngIf="name" class="alert alert-success" role="alert">
+  Welcome {{name}} your account has been created successfully.Please login with your email & password.
+</div>
+<div *ngIf="isExisting" class="alert alert-danger" role="alert">
+  Email already exist.
+</div>
+<div *ngIf="!name" class="container-fluid a">
+  <div class="">
+    <h1>Sign Up</h1>
+    <p>It's quick and easy.</p>
+  </div>
+
+  <div class="">
+    <form [formGroup]="createForm" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="form-group col">
+          <input type="text" formControlName="firstName" placeholder="First name" class="form-control" value="">
+          <div *ngIf="createForm.get('firstName').invalid && createForm.get('firstName').touched">
+            <div class="text-danger" *ngIf="createForm.get('firstName').errors?.required">firstname is required</div>
+            <div class="text-danger" *ngIf="createForm.get('firstName').errors?.minlength">required min 3 characters</div>
+            <div class="text-danger" *ngIf="createForm.get('firstName').errors?.maxlength">length exceeded</div>
+          </div>
+        </div>
+
+        <div class="form-group col">
+          <input type="text" formControlName="surName" placeholder="Surname" class="form-control" value=" ">
+          <div *ngIf="createForm.get('surName').invalid && createForm.get('surName').touched">
+            <div class="text-danger" *ngIf="createForm.get('surName').errors?.required">surname is required</div>
+            <div class="text-danger" *ngIf="createForm.get('surName').errors?.minlength">required min 3 characters</div>
+            <div class="text-danger" *ngIf="createForm.get('surName').errors?.maxlength">length exceeded</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col">
+          <input type="email" formControlName="email" placeholder="Email address" class="form-control">
+          <div *ngIf="(createForm.get('email').invalid && createForm.get('email').touched) || createForm.get('email').dirty">
+            <div class="text-danger" *ngIf="createForm.get('email').errors?.required">Email is required</div>
+<!--            <div class="text-danger" *ngIf="createForm.get('email').errors?.minlength">Enter min 10 characters</div>-->
+            <div class="text-danger" *ngIf="createForm.get('email').errors?.pattern">Please provide a valid email address</div>
+          </div>
+        </div>
+        <div class="form-group col">
+          <input type="text" formControlName="Phone" placeholder="Mobile number" class="form-control" maxlength="10">
+          <div *ngIf="createForm.get('Phone').invalid && createForm.get('Phone').touched">
+            <div class="text-danger" *ngIf="createForm.get('Phone').errors?.required">Phone is required</div>
+            <div class="text-danger" *ngIf="createForm.get('Phone').errors?.pattern">It is not a valid number</div>
+          </div>
+      </div>
+      </div>
+      <div class=" ">
+        <div class="form-group">
+          <input type="password" formControlName="newPassword" placeholder="New Password" class="form-control" value="">
+          <div *ngIf="createForm.get('newPassword').invalid && createForm.get('newPassword').touched" class="text-danger">
+            <small class="text-danger" *ngIf="createForm.get('newPassword').errors?.required">Password is required</small>
+            <small class="text-danger" *ngIf="createForm.get('newPassword').errors?.minlength">Required minimum 8 characters</small>
+            <small class="text-danger" *ngIf="createForm.get('newPassword').errors?.pattern">Password should contain 1 uppercase,lowercase,number & special carecters</small>
+          </div>
+        </div>
+      </div>
+
+      <label>Date of birth</label><br>
+      <div class="row">
+        <div class="col">
+          <select formControlName="date" class="form-control" value="">
+            <option>select date</option>
+            <option [value]='dte' *ngFor="let dte of dateList">{{dte}}</option>
+          </select>
+          <div *ngIf="createForm.get('date').touched && createForm.get('date').invalid">
+            <small class="text-danger" *ngIf="createForm.get('date').errors.required">date is required.</small>
+          </div>
+        </div>
+
+        <div class="col">
+          <select formControlName="month" class="form-control" value="">
+            <option>select month</option>
+            <option [value]='mth' *ngFor="let mth of monthList">{{mth}}</option>
+          </select>
+          <div *ngIf="createForm.get('month').touched && createForm.get('month').invalid" >
+            <small class="text-danger" *ngIf="createForm.get('month').errors.required">month is required.</small>
+          </div>
+        </div>
+
+        <div class="col">
+          <select formControlName="year" class="form-control" value="">
+            <option> select year</option>
+            <option [value]='yr' *ngFor="let yr of yearList">{{yr}}</option>
+          </select>
+          <div *ngIf="createForm.get('year').touched && createForm.get('year').invalid" >
+            <small class="text-danger" *ngIf="createForm.get('year').errors.required">year is required.</small>
+          </div>
+        </div>
+      </div><br>
+      <label>Gender</label><br>
+      <div class="row">
+        <span class="col">
+          <label class="gender-label">Female</label>
+          <input type="radio" formControlName="selectGender" class="gender" name="selectGender" value="female">
+          <div *ngIf="createForm.get('selectGender').touched && createForm.get('selectGender').invalid" >
+            <small class="text-danger" *ngIf="createForm.get('selectGender').errors.required">Required.</small>
+          </div>
+        </span>
+        <span class="col">
+          <label class="gender-label">Male</label>
+          <input type="radio" formControlName="selectGender" class="gender" name="selectGender" value="male">
+          <div *ngIf="createForm.get('selectGender').touched && createForm.get('selectGender').invalid" >
+            <small class="text-danger" *ngIf="createForm.get('selectGender').errors.required">Required.</small>
+          </div>
+        </span>
+        <span class="col">
+          <label class="gender-label">Custom</label>
+          <input type="radio" formControlName="selectGender" class="gender" name="selectGender" value="custom">
+          <div *ngIf="createForm.get('selectGender').touched && createForm.get('selectGender').invalid" >
+            <small class="text-danger" *ngIf="createForm.get('selectGender').errors.required">Required.</small>
+          </div>
+        </span>
+      </div>
+
+      <p class="para">By clicking Sign Up, you agree to our <span style="color: cornflowerblue">Terms, Data Policy </span>and <span style="color: cornflowerblue">Cookie Policy.</span> You may receive SMS notifications from us and can opt out at any time.</p>
+      <div>
+        <button [disabled] = "!createForm.valid " type="submit" class="btn btn-success  signup-btn">Sign Up</button>
+      </div>
+    </form>
+  </div>
+</div>
+
